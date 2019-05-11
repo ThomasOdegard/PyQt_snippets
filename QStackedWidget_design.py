@@ -62,6 +62,6 @@ class Form(QObject):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    form = Form('stackedWidget.ui')
+    form = Form('QStackedWidget_design.ui')
 
     sys.exit(app.exec_())
