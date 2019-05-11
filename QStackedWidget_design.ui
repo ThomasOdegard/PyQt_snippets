@@ -35,16 +35,38 @@ background-color: rgb(208, 232, 218);
 #btnSave{
 background-color: rgb(255, 255, 255);
 color: rgb(39, 117, 75);
-padding: 8px 30px
+padding: 8px 30px;
+margin: 10px;
+
+}
+
+#lblServerStatus{
+margin: 10px;
 
 }
 
 
-
-#tab{
+#tabInstall{
 border: 4px solid rgb(0, 0, 255)
 
 }
+
+#tabBasics{
+border: 4px solid rgb(255, 0, 0)
+
+}
+
+#tabAdvanced{
+border: 4px solid rgb(0, 255, 255)
+
+}
+
+#tabPassword{
+border: 4px solid rgb(255, 0, 255)
+
+}
+
+
 
 
 #lblServerName{
@@ -84,6 +106,21 @@ border: 1px solid rgb(0, 0, 0)
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item row="0" column="0">
      <widget class="QFrame" name="frame">
       <property name="frameShape">
@@ -93,6 +130,21 @@ border: 1px solid rgb(0, 0, 0)
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>30</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>9</number>
+       </property>
        <item>
         <widget class="QPushButton" name="btnHome">
          <property name="text">
@@ -160,6 +212,21 @@ border: 1px solid rgb(0, 0, 0)
       </property>
       <widget class="QWidget" name="pgHome">
        <layout class="QGridLayout" name="gridLayout_2">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>9</number>
+        </property>
+        <property name="rightMargin">
+         <number>9</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
         <item row="3" column="0">
          <spacer name="verticalSpacer_2">
           <property name="orientation">
@@ -184,10 +251,10 @@ border: 1px solid rgb(0, 0, 0)
 Custom stylesheet is set in code. Else menu-button color is lost while push other buttons.
 
 https://doc.qt.io/archives/qt-4.8/stylesheet-examples.html#customizing-qtabwidget-and-qtabbar
-            
+
 Todo: 
 Fix all margins and layout -
-*Have to strech all buttons to fit.
+
 *Tab-widget CSS has to be fixed, so the tabs is not tabs, but blend into the page.</string>
           </property>
          </widget>
@@ -224,6 +291,21 @@ Fix all margins and layout -
       </widget>
       <widget class="QWidget" name="pgDBase">
        <layout class="QGridLayout" name="gridLayout_3">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>9</number>
+        </property>
+        <property name="rightMargin">
+         <number>9</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
         <item row="0" column="0">
          <widget class="QTabWidget" name="tabWidget">
           <property name="styleSheet">
@@ -232,7 +314,7 @@ Fix all margins and layout -
           <property name="currentIndex">
            <number>0</number>
           </property>
-          <widget class="QWidget" name="tab">
+          <widget class="QWidget" name="tabInstall">
            <attribute name="title">
             <string>Install</string>
            </attribute>
@@ -406,17 +488,17 @@ Fix all margins and layout -
             </property>
            </widget>
           </widget>
-          <widget class="QWidget" name="tab_2">
+          <widget class="QWidget" name="tabBasics">
            <attribute name="title">
             <string>Basics</string>
            </attribute>
           </widget>
-          <widget class="QWidget" name="tab_3">
+          <widget class="QWidget" name="tabAdvanced">
            <attribute name="title">
             <string>Advanced</string>
            </attribute>
           </widget>
-          <widget class="QWidget" name="tab_4">
+          <widget class="QWidget" name="tabPassword">
            <attribute name="title">
             <string>Password</string>
            </attribute>
@@ -427,6 +509,21 @@ Fix all margins and layout -
       </widget>
       <widget class="QWidget" name="pgDownload">
        <layout class="QGridLayout" name="gridLayout_4">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>9</number>
+        </property>
+        <property name="rightMargin">
+         <number>9</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
         <item row="0" column="0">
          <widget class="QLabel" name="label_2">
           <property name="font">
@@ -446,6 +543,21 @@ Fix all margins and layout -
       </widget>
       <widget class="QWidget" name="pgSetting">
        <layout class="QGridLayout" name="gridLayout_5">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>9</number>
+        </property>
+        <property name="rightMargin">
+         <number>9</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
         <item row="0" column="0">
          <widget class="QLabel" name="label_3">
           <property name="font">
@@ -471,8 +583,23 @@ Fix all margins and layout -
        <string notr="true"/>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
-        <widget class="QLabel" name="label_10">
+        <widget class="QLabel" name="lblServerStatus">
          <property name="text">
           <string>MYSQL Status: Uninstalled</string>
          </property>
