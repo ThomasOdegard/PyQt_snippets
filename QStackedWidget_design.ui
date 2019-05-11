@@ -183,6 +183,8 @@ border: 1px solid rgb(0, 0, 0)
 
 Custom stylesheet is set in code. Else menu-button color is lost while push other buttons.
 
+https://doc.qt.io/archives/qt-4.8/stylesheet-examples.html#customizing-qtabwidget-and-qtabbar
+            
 Todo: 
 Fix all margins and layout -
 *Have to strech all buttons to fit.
