@@ -34,7 +34,8 @@ class MainWindow(QMainWindow):
         data.append("'brightness':")
         data.append(str(self.slider.value()))
 
-        url = "https://httpbin.org/post"
+        #url = "https://httpbin.org/post"
+        url = "https://postman-echo.com/post"
         req = QNetworkRequest(QUrl(url))
         req.setHeader(QNetworkRequest.ContentTypeHeader,
                       '"Content-Type": "application/json; charset=UTF-8"',)
