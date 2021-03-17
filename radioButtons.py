@@ -109,14 +109,19 @@ class Window(QWidget):
 
         if self.best_town == "Bergen":
             self.best_town += "☔"
+        elif self.best_town == "Trondheim":
+            self.best_town += "🏛"
+        elif self.best_town == "Stavanger":
+            self.best_town += "⚓"
+        elif self.best_town == "Oslo":
+            self.best_town += "🏙"
 
         if self.capital.isChecked():
             color = "#007F00"
             info = "<br>And the best of all, you have selected the capital 😍"
-            self.best_town += "🏛"
 
         self.lblTown.setText(
-            f'You have desided, the best town to live in is: <b><br><span style="color:{color}; font-size:24px">{self.best_town}</span></b>{info}')
+            f'You have desided, the best town to live in is: <br><b><span style="color:{color}; font-size:24px">{self.best_town}</span></b>{info}')
 
 
 app = QApplication(sys.argv)
