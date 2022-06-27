@@ -31,7 +31,7 @@ class App(QWidget):
         options = QFileDialog.Options()
         # options |= QFileDialog.DontUseNativeDialog
         fileName, _ = QFileDialog.getSaveFileName(
-            self, "Save Image as:", "image", "Jpeg Files (*.jpeg)", options=options)
+            self, "Save Image as:", "image.jpg", "Jpg Files (*.jpg)", options=options)
         if fileName:
             # Todo: Find better way to close/save file if crash (ea. stream to QImage?).
             # This is how the picamera documentation does it.
@@ -43,6 +43,7 @@ class App(QWidget):
             camera.capture(image_file)
             # image_file.flush() has been called, but we need to close the file.
             image_file.close()
+            camera.close()
 
 
 if __name__ == '__main__':
