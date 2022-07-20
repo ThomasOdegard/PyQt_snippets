@@ -23,9 +23,6 @@ brightness_data = np.asarray(image)
 #  Vertical average = 1, Horizontal average = 0.
 a_data = np.average(brightness_data, axis=0)
 
-print("integral: ", np.trapz(a_data))
-
-
 fig, axs = plt.subplots(3)
 axs[0].plot(a_data)
 axs[0].set_title("avg. brightness")
