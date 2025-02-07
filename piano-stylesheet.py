@@ -7,7 +7,8 @@ class Ui_MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.resize(500, 400)
-        self.setStyleSheet(u"QPushButton:!pressed{background-color: white;"
+        self.setStyleSheet(u"#C[pressed=True] {background-color: red;}"
+                           "QPushButton:!pressed{background-color: white;"
                            "color:black;"
                            "border-color: rgb(139, 139, 139);"
                            "border-width: 4px;"
@@ -26,7 +27,10 @@ class Ui_MainWindow(QWidget):
                            "}"
 
                            "QFrame > QPushButton:pressed {background-color: darkgreen;"
-                           "color: black}"
+                           "color: black"
+                           "}"
+
+
                            )
         self.centralwidget = QWidget(self)
         self.pushButton = QPushButton(self.centralwidget)
@@ -58,6 +62,7 @@ class Ui_MainWindow(QWidget):
         self.minor_3.setGeometry(QRect(255, 30, 40, 160))
 
         self.pushButton.setText("C")
+        self.pushButton.setObjectName("C")
         self.pushButton_2.setText("D")
         self.pushButton_3.setText("E")
         self.pushButton_4.setText("F")
@@ -70,9 +75,28 @@ class Ui_MainWindow(QWidget):
         self.minor_4.setText("G#\nAb")
         self.minor_5.setText("A#\nBb")
 
+    def eventFilter(self, obj, event):
+        if event.type() == QEvent.KeyPress:
+            # print(dir(obj.pushButton))
+
+            print(f"Pressed {event.key()}")
+            if event.key() == Qt.Key_C:
+                self.pushButton.setProperty("pressed", "True")
+                self.pushButton.style().unpolish(self.pushButton)
+                self.pushButton.style().polish(self.pushButton)
+
+        elif event.type() == QEvent.KeyRelease:
+            if event.key() == Qt.Key_C:
+                print("Released C")
+                self.pushButton.setProperty("pressed", "False")
+                self.pushButton.style().unpolish(self.pushButton)
+                self.pushButton.style().polish(self.pushButton)
+        return super(Ui_MainWindow, self).eventFilter(obj, event)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     myWindow = Ui_MainWindow()
+    myWindow.installEventFilter(myWindow)
     myWindow.show()
     app.exec_()
